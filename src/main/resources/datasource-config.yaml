@@ -20,32 +20,31 @@ mode:
   type: Standalone
   repository:
     type: JDBC
-  overwrite: false # 是否使用本地配置覆盖持久化配置
 
 dataSources:
   write-ds:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://${DB_HOST:10.211.55.140}:${DB_PORT:3306}/${DB_NAME:unicorn}?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
-    username: ${DB_USER:root}
-    password: ${DB_PWD:root}
+    jdbcUrl: jdbc:mysql://10.211.55.140:3306/unicorn?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    username: root
+    password: root
     maxPoolSize: 10
 
   read-ds-0:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://${DB_HOST:10.211.55.140}:${DB_PORT:3308}/${DB_NAME:unicorn}?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    jdbcUrl: jdbc:mysql://10.211.55.140:3308/unicorn?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     # 从库改用只读账号
-    username: ${DB_USER:reader}
-    password: ${DB_PWD:123456}
+    username: reader
+    password: 123456
     maxPoolSize: 10
   read-ds-1:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://${DB_HOST:10.211.55.140}:${DB_PORT:3310}/${DB_NAME:unicorn}?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    jdbcUrl: jdbc:mysql://10.211.55.140:3310/unicorn?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     # 从库改用只读账号
-    username: ${DB_USER:reader}
-    password: ${DB_PWD:123456}
+    username: reader
+    password: 123456
     maxPoolSize: 10
 
 rules:
