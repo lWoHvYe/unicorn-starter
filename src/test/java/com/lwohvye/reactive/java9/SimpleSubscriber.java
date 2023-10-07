@@ -15,7 +15,7 @@
  */
 
 // SimpleSubscriber.java
-package com.lwohvye.rx;
+package com.lwohvye.reactive.java9;
 
 import java.util.concurrent.Flow;
 

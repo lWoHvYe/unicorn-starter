@@ -15,7 +15,7 @@
  */
 
 // ProcessorTest.java
-package com.lwohvye.rx;
+package com.lwohvye.reactive.java9;
 
 import java.util.concurrent.SubmissionPublisher;
 import java.util.concurrent.TimeUnit;
