@@ -26,6 +26,7 @@ import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.tools.agent.ReactorDebugAgent;
 
 /**
  * App启动入口
@@ -52,6 +53,8 @@ public class AppRun {
      * @date 2021/11/23 9:43 上午
      */
     public static void main(String[] args) {
+        ReactorDebugAgent.init(); // https://projectreactor.io/docs/core/release/reference/#debugging
+//        ReactorDebugAgent.processExistingClasses();
         SpringApplication.run(AppRun.class, args);
     }
 
