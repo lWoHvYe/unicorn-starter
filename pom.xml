@@ -215,6 +215,9 @@
                                 <manifest>
                                     <addClasspath>true</addClasspath>
                                 </manifest>
+                                <manifestEntries>
+                                    <Automatic-Module-Name>lwohvye.unicorn.starter</Automatic-Module-Name>
+                                </manifestEntries>
                             </archive>
                             <!--不打入jar包的文件类型或者路径-->
                             <!--<excludes>-->
