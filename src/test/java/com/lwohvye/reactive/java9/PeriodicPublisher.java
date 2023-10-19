@@ -60,7 +60,7 @@ public class PeriodicPublisher {
     public static Thread publish(SubmissionPublisher<Long> pub, long count) {
         var t = new Thread(() -> {
             for (long i = 1; i <= count; i++) {
-                // submit 1 to 5
+                // submit 1 to count
                 pub.submit(i);
                 sleep(i);
             }
