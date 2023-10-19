@@ -1,14 +1,15 @@
 package com.lwohvye.reactive.adapter;
 
-import reactor.core.publisher.Flux;
 import reactor.adapter.JdkFlowAdapter;
+import reactor.core.publisher.Flux;
 
 import java.util.concurrent.Flow;
 
 public class ReactorToJava9FlowExample {
     public static void main(String[] args) {
         // 创建一个 Flux
-        Flux<Integer> flux = Flux.just(1, 2, 3, 4, 5);
+        Flux<Integer> flux = Flux.just(1, 2, 3, 4, 5)
+                .doOnSubscribe(System.out::println);
 
         // 使用 JdkFlowAdapter 将 Flux 适配为 Java 9 Flow 的 Publisher
         Flow.Publisher<Integer> publisher = JdkFlowAdapter.publisherToFlowPublisher(flux);
