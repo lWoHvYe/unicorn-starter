@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0</version>
+        <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -37,8 +37,8 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <javassist.version>3.29.2-GA</javassist.version>
         <shardingsphere.version>5.4.0</shardingsphere.version>
-        <kotlin.version>1.9.20</kotlin.version>
-        <kotlin-coroutines.version>1.7.3</kotlin-coroutines.version>
+        <kotlin.version>1.9.21</kotlin.version>
+        <kotlin-coroutines.version>1.8.0</kotlin-coroutines.version>
     </properties>
 
     <dependencies>
