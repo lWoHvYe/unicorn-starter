@@ -31,7 +31,7 @@
 
     <properties>
         <java.version>21</java.version>
-        <project.core.version>4.2.0-pi</project.core.version>
+        <project.core.version>4.2.0-rho</project.core.version>
         <maven.compiler.release>21</maven.compiler.release>
         <lombok.version>1.18.30</lombok.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
