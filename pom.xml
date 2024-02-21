@@ -37,7 +37,7 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <shardingsphere.version>5.4.0</shardingsphere.version>
-        <kotlin.version>1.9.21</kotlin.version>
+        <kotlin.version>1.9.22</kotlin.version>
         <kotlin-coroutines.version>1.8.0</kotlin-coroutines.version>
     </properties>
 
