@@ -48,6 +48,10 @@ dataSources:
     maxPoolSize: 10
 
 rules:
+  # config single table to fix TableNotExistsException
+  - !SINGLE
+    tables:
+      - "*.*"
   - !READWRITE_SPLITTING
     dataSources:
       readwrite_ds:
