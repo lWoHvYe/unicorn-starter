@@ -1,37 +1,23 @@
 package com.lwohvye.mapred.wordcount;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
+import org.springframework.util.StringUtils;
 
-import java.io.IOException;
+import java.util.Arrays;
 
 public class WordCountDriver {
-    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+    // -DA=a -Db=b src/test/resources/word_count src/test/resources/output -Dc=c
+    public static void main(String[] args) throws Exception {
         var conf = new Configuration();
-        Job job = Job.getInstance(conf);
-
-        job.setJarByClass(WordCountDriver.class);
-        job.setMapperClass(WordCountMapper.class);
-        job.setReducerClass(WordCountReducer.class);
-        //        job.setCombinerClass(WordCountCombiner.class);
-        job.setCombinerClass(WordCountReducer.class);
-
-        job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(IntWritable.class);
-
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
-
-        FileInputFormat.setInputPaths(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
-
-        var result = job.waitForCompletion(true);
-
-        System.exit(result ? 0 : 1);
+        var newArgs = Arrays.stream(args)
+                .filter(arg -> !StringUtils.startsWithIgnoreCase(arg, "-"))
+                .toArray(String[]::new);
+        if (newArgs.length != 2)
+            throw new IllegalArgumentException("Wrong number of arguments: " + newArgs.length);
+        Tool tool = new WordCountRunner();
+        var run = ToolRunner.run(conf, tool, newArgs);
+        System.exit(run);
     }
 }
