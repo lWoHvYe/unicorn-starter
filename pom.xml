@@ -36,7 +36,7 @@
         <lombok.version>1.18.36</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <javassist.version>3.30.2-GA</javassist.version>
-        <shardingsphere.version>5.5.0</shardingsphere.version>
+        <shardingsphere.version>5.5.2</shardingsphere.version>
         <kotlin.version>2.1.0</kotlin.version>
         <kotlin-coroutines.version>1.9.0</kotlin-coroutines.version>
         <maven.compiler.proc>full</maven.compiler.proc>
