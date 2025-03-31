@@ -33,7 +33,7 @@
         <java.version>21</java.version>
         <project.core.version>4.6.0-upsilon</project.core.version>
         <maven.compiler.release>21</maven.compiler.release>
-        <lombok.version>1.18.36</lombok.version>
+        <lombok.version>1.18.38</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <shardingsphere.version>5.5.2</shardingsphere.version>
